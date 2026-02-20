@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)file:///Users/kings/Downloads/rutsami4.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rutsami Luex Homes | Luxury Living Lagos</title>
+    <link href="./Rutsami Luex Homes _ Luxury Living Lagos_files/css2" rel="stylesheet">
+    <style>
+        :root {
+            --black: #050505;
+            --brown: #8b633e;
+            --milk: #f5f5dc;
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --liquid-glass: rgba(255, 255, 255, 0.07);
+            --transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; outline: none; }
+        body { 
+            background-color: var(--black); 
+            color: var(--milk); 
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 { font-family: 'Playfair Display', serif; text-transform: uppercase; }
+
+        /* --- Navigation --- */
+        nav {
+            position: fixed; width: 100%; padding: 15px 5%;
+            display: flex; justify-content: space-between; align-items: center;
+            z-index: 1000;
+            background: rgba(5, 5, 5, 0.8);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--glass-border);
+        }
+        .logo img { height: 55px; filter: drop-shadow(0 0 5px rgba(139, 99, 62, 0.5)); }
+        .nav-links { display: flex; list-style: none; gap: 30px; }
+        .nav-links a { 
+            color: var(--milk); text-decoration: none; font-size: 11px; font-weight: 600; 
+            letter-spacing: 2px; transition: var(--transition);
+        }
+        .nav-links a:hover { color: var(--brown); }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 100vh; width: 100%; position: relative;
+            display: flex; align-items: center; justify-content: center; text-align: center;
+            overflow: hidden;
+        }
+        .hero video {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover; z-index: -2;
+        }
+        .hero-overlay {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.5), var(--black));
+            z-index: -1;
+        }
+
+        .booking-glass {
+            background: var(--liquid-glass);
+            backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid var(--glass-border);
+            padding: 50px;
+            border-radius: 30px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            max-width: 650px;
+            width: 90%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* --- Rooms Section --- */
+        .rooms-section { 
+            padding: 100px 5%; 
+            background: url('PIC 1.jpg') no-repeat center center/cover fixed;
+            position: relative;
+        }
+        .rooms-section::before {
+            content: ''; position: absolute; top:0; left:0; width:100%; height:100%;
+            background: rgba(0,0,0,0.9); z-index: 1;
+        }
+        .rooms-container { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; }
+        
+        .room-selector {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;
+        }
+        .room-nav { display: flex; flex-direction: column; gap: 15px; }
+        .room-option {
+            padding: 25px; background: var(--glass); border: 1px solid var(--glass-border);
+            cursor: pointer; transition: var(--transition); border-radius: 10px;
+        }
+        .room-option.active {
+            background: rgba(139, 99, 62, 0.2); 
+            border-left: 5px solid var(--brown);
+        }
+        .room-display img {
+            width: 100%; height: 500px; object-fit: cover;
+            border-radius: 15px; border: 1px solid var(--glass-border);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        /* --- Amenities Section --- */
+        .amenities { 
+            padding: 100px 5%; background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('PIC 3.jpeg');
+            background-size: cover; background-attachment: fixed;
+        }
+        .amenity-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;
+        }
+        .amenity-card {
+            background: rgba(255,255,255,0.03); backdrop-filter: blur(10px);
+            padding: 30px; border: 1px solid var(--glass-border);
+            text-align: center; transition: var(--transition);
+        }
+        .amenity-card:hover { border-color: var(--brown); transform: translateY(-5px); }
+
+        /* --- CONTACT: UPDATED WITH NEW BACKGROUND --- */
+        .contact { 
+            padding: 120px 5%; 
+            background: url('e7a692e8-f9e7-4d26-80fd-7a86b1e74fdb.JPG') no-repeat center center/cover fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.7); 
+            z-index: 1;
+        }
+        
+        .contact-glass-card {
+            position: relative;
+            z-index: 2;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(25px) saturate(160%);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 80px 40px;
+            border-radius: 40px;
+            width: 100%;
+            max-width: 800px;
+            text-align: center;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.8);
+            transition: var(--transition);
+        }
+
+        .contact-glass-card:hover {
+            border-color: var(--brown);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .contact h2 { font-size: 2.5rem; color: var(--brown); margin-bottom: 10px; }
+        .contact p.sub-tag { letter-spacing: 3px; font-size: 0.9rem; opacity: 0.8; margin-bottom: 40px; color: var(--milk); }
+
+        .contact-info-wrap {
+            display: flex; flex-direction: column; gap: 30px; align-items: center;
+        }
+
+        .contact-link {
+            text-decoration: none; color: var(--milk);
+            font-size: 1.8rem; font-weight: 600;
+            transition: var(--transition);
+            display: block;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .contact-link span { display: block; font-size: 0.7rem; color: var(--brown); letter-spacing: 2px; margin-bottom: 5px; }
+
+        .contact-link:hover { color: var(--brown); transform: scale(1.05); }
+
+        /* --- Footer --- */
+        footer { position: relative; z-index: 2; padding: 40px; text-align: center; font-size: 11px; color: #777; letter-spacing: 2px; background: #000; }
+
+        @media (max-width: 900px) {
+            .room-selector { grid-template-columns: 1fr; }
+            .contact-glass-card { padding: 50px 20px; }
+            .contact-link { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+            <img src="./Rutsami Luex Homes _ Luxury Living Lagos_files/Gemini_Generated_Image_6ov94r6ov94r6ov9-removebg-preview.png" alt="Rutsami Luex Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="file:///Users/kings/Downloads/rutsami4.html#home">HOME</a></li>
+            <li><a href="file:///Users/kings/Downloads/rutsami4.html#rooms">SPACES</a></li>
+            <li><a href="file:///Users/kings/Downloads/rutsami4.html#amenities">AMENITIES</a></li>
+            <li><a href="file:///Users/kings/Downloads/rutsami4.html#contact">CONTACT US</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="home">
+        <video autoplay="" muted="" loop="" playsinline="">
+            <source src="521ddfb3-a426-4e87-90f2-3e3c80193fa9.mov" type="video/quicktime">
+            <source src="521ddfb3-a426-4e87-90f2-3e3c80193fa9.mov" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="booking-glass">
+            <p style="letter-spacing: 5px; color: var(--brown); margin-bottom: 10px;">RUTSAMI LUEX HOMES</p>
+            <h1 style="font-size: 3rem; margin-bottom: 15px;">Luxury Redefined</h1>
+            <p style="margin-bottom: 30px;">Premium service apartments for executives and families in the heart of Lagos.</p>
+            <a href="file:///Users/kings/Downloads/rutsami4.html#contact" style="background: var(--brown); color: #000; padding: 15px 35px; text-decoration: none; font-weight: 700; border-radius: 5px; font-size: 0.8rem; letter-spacing: 1px;">BOOK A VIEWING</a>
+        </div>
+    </section>
+
+    <section class="rooms-section" id="rooms">
+        <div class="rooms-container">
+            <h2 style="font-size: 2.5rem; margin-bottom: 50px; color: var(--brown); text-align: center;">Our Elite Spaces</h2>
+            <div class="room-selector">
+                <div class="room-nav">
+                    <div class="room-option active" data-img="3bb4eb8b-8ce9-4679-9087-154183bc306a.JPG">
+                        <h3>2 Bedroom Maisonnette</h3>
+                        <p>Swimming pool, PS5, Snooker board</p>
+                    </div>
+                    <div class="room-option" data-img="7f73ec38-d5c5-455b-8a5c-a7106b8f39c0.JPG">
+                        <h3>3/4 Bedroom Maisonnette</h3>
+                        <p>PS5, Snooker, Wifi, 24hr Power</p>
+                    </div>
+                    <div class="room-option" data-img="57d244b6-e93e-4bce-8c27-01cfd4bdd2a9.JPG">
+                        <h3>Banana Island Studio</h3>
+                        <p>Elegant Studio in Ikoyi</p>
+                    </div>
+                    <div class="room-option" data-img="rusami.jpg">
+                        <h3>Premium 2 Bedroom</h3>
+                        <p>Netflix, WiFi, 24hr Power</p>
+                    </div>
+                </div>
+                <div class="room-display">
+                    <img id="main-room-img" src="./Rutsami Luex Homes _ Luxury Living Lagos_files/3bb4eb8b-8ce9-4679-9087-154183bc306a.JPG" alt="Luxury Room">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="amenities" id="amenities">
+        <div class="rooms-container">
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 50px;">The Luex Standard</h2>
+            <div class="amenity-grid">
+                <div class="amenity-card"><h4>24/7 Security</h4></div>
+                <div class="amenity-card"><h4>Swimming Pool</h4></div>
+                <div class="amenity-card"><h4>High-Speed WiFi</h4></div>
+                <div class="amenity-card"><h4>Smart Locks</h4></div>
+                <div class="amenity-card"><h4>Gym Access</h4></div>
+                <div class="amenity-card"><h4>Full Kitchen</h4></div>
+                <div class="amenity-card"><h4>Snooker Table</h4></div>
+                <div class="amenity-card"><h4>Free Parking</h4></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="contact-glass-card">
+            <h2>Contact Us</h2>
+            <p class="sub-tag">LUXURY AT YOUR FINGERTIPS</p>
+            
+            <div class="contact-info-wrap">
+                <a href="tel:+23407049870341" class="contact-link">
+                    <span>CALL FOR INQUIRIES</span>
+                    +234 07049870341
+                </a>
+                
+                <div style="width: 50px; height: 1px; background: var(--brown); opacity: 0.5;"></div>
+                
+                <a href="mailto:rutsamiluexhomes@gmail.com" class="contact-link">
+                    <span>EMAIL US</span>
+                    rutsamiluexhomes@gmail.com
+                </a>
+            </div>
+            
+            <p style="margin-top: 50px; font-size: 0.8rem; opacity: 0.7; color: var(--milk);">Available for Corporate Executives, Expats, and Families.</p>
+        </div>
+    </section>
+
+    <footer>
+        © 2026 RUTSAMI LUEX HOMES LAGOS
+    </footer>
+
+    <script>
+        const options = document.querySelectorAll('.room-option');
+        const mainImg = document.getElementById('main-room-img');
+
+        options.forEach(option => {
+            option.addEventListener('click', () => {
+                options.forEach(opt => opt.classList.remove('active'));
+                option.classList.add('active');
+                const newSrc = option.getAttribute('data-img');
+                mainImg.style.opacity = 0;
+                setTimeout(() => {
+                    mainImg.src = newSrc;
+                    mainImg.style.opacity = 1;
+                }, 300);
+            });
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+</body></html>
